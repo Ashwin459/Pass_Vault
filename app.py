@@ -30,7 +30,7 @@ def decrypt_password(key, encrypted_password):
     decrypted_password = fernet.decrypt(encrypted_password).decode()
     return decrypted_password
 
-uri = "mongodb+srv://ashwinkon98:ywqZWZLh7jGKTk1c@passvault.ionto.mongodb.net/?retryWrites=true&w=majority&appName=PassVault"
+uri = "mongodb+srv://<USERNAME:PASSWORD>@passvault.ionto.mongodb.net/?retryWrites=true&w=majority&appName=PassVault"
 
 # Create a new MongoDB client
 client = MongoClient(uri, server_api=ServerApi('1'))
@@ -80,7 +80,7 @@ def add_password():
         # Create the password document
         password_data = {
             "username": username,        # The user's username
-            "acc_name": acc_name,        # The name of the account (e.g., "insta")
+            "acc_name": acc_name,        # The name of the account 
             "acc_username": acc_username, # The username for the account
             "encrypted_password": encrypted_password  # Encrypted password
         }
